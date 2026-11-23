@@ -19,7 +19,7 @@ zip    skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.zip  sha256 ab49fc221dc6627cbb2f11
 img    skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.img  sha256 9f97d550668ea17a41e1445bb55332e23165df98394392edad9be648c6fb2934
 ```
 
-**这一版尚未上机验证**（0.5.x 上游还改了 binder 层与 weaver 的 NXP 分支），先在 `recovery_b` 或备份好原厂 recovery 的前提下试。
+**已上机实测（2026-11-23）**：`nezha` + OS4.0.7.0.XPACNXM，解密页输 6 位 PIN 正常打开 `/data`、`/sdcard`，触摸、WLAN、MTP、振动、fastbootd 全部正常。0.5.x 改过的 binder 层与 weaver 分支在这台机器上没有引入回归。
 
 ## v0.3.2 — 首个 17 Ultra 专用版本
 

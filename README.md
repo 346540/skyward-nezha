@@ -28,7 +28,7 @@
 | zip sha256 | `ab49fc221dc6627cbb2f11d44a46f8b9109343a514df5829d2cee0a90fc3e2e9` |
 | stock 基线 | OS4.0.7.0.XPACNXM 整包内 `recovery` 分区，sha256 `43927e2cb10fc0edc6d793e2bec8f4bc4a2e0c51b0a920b65163f4e2118bc302` |
 
-在 [Releases](../../releases) 下载。
+在 [Releases](../../releases) 下载；`v0.5.2` 是当前实测通过的版本。
 
 ## 刷入
 
@@ -78,7 +78,8 @@ adb shell su -c "dd if=/dev/block/by-name/recovery$(adb shell getprop ro.boot.sl
 - 只在这一台 `nezha`（Thales eSE）上实测；Goodix eSE 版本没有机器验证（上游用 `ro.special_edition` 区分）。
 - 改锁屏密码/图案后，Android 会重建保护者，可能又解不开；刷回原厂 recovery 即可。
 - 系统 OTA 会覆盖 `recovery` 分区；装完系统记得在 Install 页打开 *Flash Skyward again*。
-- 目前基于上游 `v0.5.1`（`43ec6da`），版本号 0.5.2。`v0.3.2` 仍保留在 Releases 里，是最后一次在本机实测通过的版本。
+- 目前基于上游 `v0.5.1`（`43ec6da`），版本号 0.5.2；**已在本机实测**：解密、触摸、WLAN、MTP、振动、fastbootd 正常。
+- `v0.3.2` 是上一代基于 `v0.3.1` 的实测版本，保留在 Releases 里备用。
 
 ## 自己构建
 
