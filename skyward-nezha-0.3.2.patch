@@ -1,0 +1,657 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index ee5530e..c656ef7 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -2362,7 +2362,7 @@ checksum = "33f4fe9184a62d842c9ef383018f3306d8ba224fd9d836f56d7288308847c256"
+ 
+ [[package]]
+ name = "skyward"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "clap",
+@@ -2396,7 +2396,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-backup"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "hex",
+@@ -2411,7 +2411,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-binder"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "libc",
+@@ -2420,7 +2420,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-block"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "hex",
+@@ -2432,7 +2432,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-bootimg"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "abootimg-oxide",
+  "anyhow",
+@@ -2444,7 +2444,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-config"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "serde",
+@@ -2453,7 +2453,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-crypto"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "aes-gcm",
+  "anyhow",
+@@ -2469,7 +2469,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-files"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "libc",
+@@ -2477,7 +2477,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-info"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "libc",
+@@ -2491,7 +2491,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-install"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "abootimg-oxide",
+  "anyhow",
+@@ -2521,7 +2521,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-lp"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "sha2 0.10.9",
+@@ -2530,7 +2530,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-modules"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "libc",
+@@ -2539,7 +2539,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-mtp"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "jiff",
+@@ -2552,7 +2552,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-net"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "aes",
+  "anyhow",
+@@ -2574,7 +2574,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-omapi"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "skyward-binder",
+@@ -2583,7 +2583,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-pack"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "clap",
+@@ -2601,7 +2601,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-preview"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "png",
+@@ -2618,7 +2618,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-programs"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "roxmltree",
+@@ -2630,7 +2630,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-sys"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "libc",
+@@ -2639,7 +2639,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-system-init"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "libc",
+@@ -2652,7 +2652,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-systems"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "abootimg-oxide",
+  "anyhow",
+@@ -2671,7 +2671,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-ui"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "ab_glyph",
+  "ab_glyph_rasterizer",
+@@ -2700,7 +2700,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "skyward-vab"
+-version = "0.3.1"
++version = "0.3.2"
+ dependencies = [
+  "anyhow",
+  "libc",
+diff --git a/Cargo.toml b/Cargo.toml
+index 199b12c..868107e 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -27,7 +27,7 @@ members = [
+ ]
+ 
+ [workspace.package]
+-version = "0.3.1"
++version = "0.3.2"
+ edition = "2024"
+ license = "GPL-3.0-or-later"
+ 
+diff --git a/README.md b/README.md
+index 0522194..942f187 100644
+--- a/README.md
++++ b/README.md
+@@ -89,7 +89,7 @@ read and set properties.
+ 
+ | Device | Codename | Tested system version |
+ | --- | --- | --- |
+-| Xiaomi 17 Ultra | `nezha` | OS4.0.4.0.XPACNXM (Android 17) |
++| Xiaomi 17 Ultra | `nezha` | OS4.0.7.0.XPACNXM (Android 17) |
+ | Xiaomi 13 Ultra | `ishtar` | OS3.0.308.0.WMACNXM (Android 16) |
+ 
+ ### 🚧 Under construction
+@@ -132,8 +132,8 @@ phone's model and codename, such as Xiaomi 17 Ultra (nezha). Check it against
+ the slot the phone runs from, with the phone in fastboot mode:
+ 
+ ```sh
+-unzip skyward-v0.3.1-nezha-OS4.0.4.0.XPACNXM.zip
+-fastboot flash recovery skyward-v0.3.1-nezha-OS4.0.4.0.XPACNXM.img
++unzip skyward-v0.3.1-nezha-OS4.0.7.0.XPACNXM.zip
++fastboot flash recovery skyward-v0.3.1-nezha-OS4.0.7.0.XPACNXM.img
+ fastboot reboot recovery
+ ```
+ 
+@@ -264,6 +264,25 @@ such as `en` or `zh-TW`:
+ cargo run --release -p skyward-preview -- target/preview --lang en
+ ```
+ 
++### Adapting to a new system version
++
++`[stock]` in `devices/<codename>.toml` says which system version the image is made
++on: `version` is that build, `package` is where its full update package is, and
++`recovery` is the SHA-256 of the recovery partition inside it. After the phone
++takes an update, change those three lines to the new version and build again:
++
++```sh
++cargo build --release -p skyward-pack
++target/release/skyward-pack stock --config devices/nezha.toml
++```
++
++`skyward-pack stock` checks that partition's SHA-256. Where `recovery` does not
++match, it stops and prints the sum the package actually holds; write that back
++into the file. Try the new image on the phone before trusting it: the screen and
++keys, touch, WLAN, vibration and decryption of the data partition all run from the
++programs of the version it is built on, and the programs listed in `[service]`
++have to be renamed or moved where that version moved them.
++
+ ## License
+ 
+ [GPL-3.0-or-later](LICENSE)
+diff --git a/README.zh-CN.md b/README.zh-CN.md
+index e45570c..c4ce2b5 100644
+--- a/README.zh-CN.md
++++ b/README.zh-CN.md
+@@ -85,7 +85,7 @@ Skyward 是使用 Rust 编写的 recovery，从零开始编写。
+ 
+ | 机型 | 代号 | 测试的系统版本 |
+ | --- | --- | --- |
+-| 小米 17 Ultra | `nezha` | OS4.0.4.0.XPACNXM（Android 17） |
++| 小米 17 Ultra | `nezha` | OS4.0.7.0.XPACNXM（Android 17） |
+ | 小米 13 Ultra | `ishtar` | OS3.0.308.0.WMACNXM（Android 16） |
+ 
+ ### 🚧 施工中
+@@ -119,8 +119,8 @@ Skyward 是使用 Rust 编写的 recovery，从零开始编写。
+ Skyward 需要已解锁的 bootloader。从 [Releases](https://github.com/kirklin/skyward/releases) 下载对应机型的 zip，每个文件都标有机型和代号，例如 Xiaomi 17 Ultra (nezha)。使用 `SHA256SUMS` 核对并解压之后，在手机处于 fastboot 模式的时候，把其中的镜像刷入当前运行槽位的 recovery 分区：
+ 
+ ```sh
+-unzip skyward-v0.3.1-nezha-OS4.0.4.0.XPACNXM.zip
+-fastboot flash recovery skyward-v0.3.1-nezha-OS4.0.4.0.XPACNXM.img
++unzip skyward-v0.3.1-nezha-OS4.0.7.0.XPACNXM.zip
++fastboot flash recovery skyward-v0.3.1-nezha-OS4.0.7.0.XPACNXM.img
+ fastboot reboot recovery
+ ```
+ 
+@@ -202,6 +202,17 @@ cargo ndk -t arm64-v8a --platform 30 test -p skyward -p skyward-block -p skyward
+ cargo run --release -p skyward-preview -- target/preview --lang en
+ ```
+ 
++### 适配新的系统版本
++
++`devices/<codename>.toml` 的 `[stock]` 说明这个镜像是基于哪个系统版本构建的：`version` 是这个版本，`package` 是它完整更新包的地址，`recovery` 是包里 recovery 分区的 SHA-256。手机更新系统之后，把这三行换成新的版本，再按上面的命令重新构建：
++
++```sh
++cargo build --release -p skyward-pack
++target/release/skyward-pack stock --config devices/nezha.toml
++```
++
++`skyward-pack stock` 核对包里那个分区的 SHA-256；`recovery` 对不上时它报错，并给出包里实际的 SHA-256，把它抄回配置里即可。新的镜像要先在手机上验证：屏幕和按键、触摸、WLAN、振动和解密 data 分区都依赖这一版系统里的程序，`[service]` 里列出的程序换了名字或者位置时，也要跟着改。
++
+ ## 许可证
+ 
+ [GPL-3.0-or-later](LICENSE)
+diff --git a/crates/skyward-bootimg/src/ramdisk.rs b/crates/skyward-bootimg/src/ramdisk.rs
+index a266fa3..3f59c3b 100644
+--- a/crates/skyward-bootimg/src/ramdisk.rs
++++ b/crates/skyward-bootimg/src/ramdisk.rs
+@@ -80,11 +80,18 @@ impl Ramdisk {
+         Ok(Ramdisk { entries })
+     }
+ 
+-    /// Pack as a newc archive compressed the way AOSP packs boot ramdisks,
+-    /// with the reference `lz4` tool in legacy framing (the kernel's initramfs
+-    /// unpacker reads no other LZ4 framing) at its highest compression.
++    /// Pack as a newc archive compressed the way AOSP packs boot ramdisks, in
++    /// LZ4's legacy framing (the kernel's initramfs unpacker reads no other
++    /// LZ4 framing). The reference `lz4` tool is used where it is installed,
++    /// its highest compression packing the archive tighter; where it is not,
++    /// the archive is compressed in process, so that an image builds on a
++    /// machine without the tool, such as the phone itself.
+     pub fn encode(&self) -> Result<Vec<u8>> {
+-        lz4_tool(&self.archive()?)
++        let archive = self.archive()?;
++        match lz4_tool(&archive) {
++            Ok(packed) => Ok(packed),
++            Err(_) => Ok(lz4_legacy(&archive)),
++        }
+     }
+ 
+     /// Pack as a newc archive, uncompressed.
+diff --git a/crates/skyward-config/src/lib.rs b/crates/skyward-config/src/lib.rs
+index 873967f..8b841b2 100644
+--- a/crates/skyward-config/src/lib.rs
++++ b/crates/skyward-config/src/lib.rs
+@@ -488,6 +488,13 @@ pub fn codename(text: &str) -> Result<String> {
+     Ok(named.device.codename)
+ }
+ 
++/// Whether a path names a place from the phone's own top. The paths a
++/// configuration gives are the phone's, written as the phone writes them:
++/// judged by their shape, a computer whose own paths are not written that way
++/// reads them as the phone does, and the packer builds the same image on it.
++fn absolute(path: &Path) -> bool {
++    path.has_root()
++}
+ impl DeviceConfig {
+     pub fn load(path: impl AsRef<Path>) -> Result<Self> {
+         let p = path.as_ref();
+@@ -502,7 +509,7 @@ impl DeviceConfig {
+             let path = Path::new(log);
+             let plain = path.components().all(|c| matches!(c, std::path::Component::RootDir | std::path::Component::Normal(_)));
+             ensure!(
+-                path.is_absolute() && plain && path.starts_with(DATA) && path != Path::new(DATA),
++                absolute(path) && plain && path.starts_with(DATA) && path != Path::new(DATA),
+                 "[wipe] logs: {log} is not a folder inside {DATA}"
+             );
+         }
+@@ -540,7 +547,7 @@ impl DeviceConfig {
+         }
+         if let Some(haptics) = &cfg.haptics {
+             let file = &haptics.resonance;
+-            ensure!(Path::new(file).is_absolute(), "[haptics] resonance: {file} is not an absolute path");
++            ensure!(absolute(Path::new(file)), "[haptics] resonance: {file} is not an absolute path");
+             let Strength { lightest, strongest } = haptics.strength;
+             ensure!(
+                 0.0 < lightest && lightest < strongest && strongest <= 1.0,
+@@ -551,7 +558,7 @@ impl DeviceConfig {
+             for library in &logd.libraries {
+                 let path = Path::new(library);
+                 let plain = path.components().all(|c| matches!(c, std::path::Component::RootDir | std::path::Component::Normal(_)));
+-                ensure!(path.is_absolute() && plain && path.file_name().is_some(), "[logd] libraries: {library} is not an absolute path to a file");
++                ensure!(absolute(path) && plain && path.file_name().is_some(), "[logd] libraries: {library} is not an absolute path to a file");
+             }
+         }
+         for owners in &cfg.owners {
+@@ -563,7 +570,7 @@ impl DeviceConfig {
+             for file in &owners.paths {
+                 let path = Path::new(file);
+                 let plain = path.components().all(|c| matches!(c, std::path::Component::RootDir | std::path::Component::Normal(_)));
+-                ensure!(path.is_absolute() && plain && path.file_name().is_some(), "[[owners]] paths: {file} is not an absolute path to a file");
++                ensure!(absolute(path) && plain && path.file_name().is_some(), "[[owners]] paths: {file} is not an absolute path to a file");
+             }
+         }
+         if let Some(stock) = &cfg.stock {
+@@ -596,7 +603,7 @@ impl DeviceConfig {
+                         );
+                         ensure!(plain && !file.path.is_empty(), "[wlan] firmware: {} is not a path from the top of {partition}", file.path);
+                     }
+-                    None => ensure!(path.is_absolute(), "[wlan] firmware: {} is not an absolute path", file.path),
++                    None => ensure!(absolute(path), "[wlan] firmware: {} is not an absolute path", file.path),
+                 }
+             }
+         }
+@@ -693,7 +700,7 @@ mod tests {
+         assert_eq!(soc.en, "Snapdragon® 8 Elite Gen 5 Mobile Platform");
+         assert_eq!(cfg.display.width, 1200);
+         assert_eq!(cfg.display.diagonal, Some(6.9));
+-        assert_eq!(cfg.modules.load, ["synaptics_tcm2"]);
++        assert_eq!(cfg.modules.load, ["synaptics_tcm2", "stm_st54se_gpio"], "the touchscreen and the secure element");
+         assert_eq!(
+             cfg.touch.writes,
+             [Write { path: "/sys/class/touch/touch_dev/enable_touch_raw".into(), value: "0".into() }],
+@@ -701,6 +708,11 @@ mod tests {
+         );
+         assert_eq!(cfg.firmware, Some(FirmwarePartition { partition: "modem".into() }));
+         assert_eq!(cfg.partitions.mounted, ["persist"], "the secure world keeps its own files there");
++    assert_eq!(
++        cfg.owners,
++        [Owners { user: "system".into(), group: "system".into(), mode: 0o660, paths: vec!["/dev/st54spi_gpio".into(), "/dev/ir_spi".into()] }],
++        "the secure element's service opens its channel as system"
++    );
+         let [post_boot] = &cfg.services[..] else { panic!("one program: those that use the phone's keys are read from the phone's own partitions") };
+         assert_eq!(post_boot.path, "/vendor/bin/sh");
+         assert!(post_boot.oneshot, "the system's own settings for after start are made once");
+@@ -775,7 +787,7 @@ mod tests {
+     #[test]
+     fn each_phone_names_the_stock_build_its_recovery_is_made_on() {
+         for (text, version) in [
+-            (include_str!("../../../devices/nezha.toml"), "OS4.0.4.0.XPACNXM"),
++            (include_str!("../../../devices/nezha.toml"), "OS4.0.7.0.XPACNXM"),
+             (include_str!("../../../devices/ishtar.toml"), "OS3.0.308.0.WMACNXM"),
+             (include_str!("../../../devices/pudding.toml"), "OS4.0.4.0.XPCCNXM"),
+             (include_str!("../../../devices/pandora.toml"), "OS4.0.4.0.XBLCNXM"),
+diff --git a/crates/skyward-crypto/src/data.rs b/crates/skyward-crypto/src/data.rs
+index 53903a5..dbc4238 100644
+--- a/crates/skyward-crypto/src/data.rs
++++ b/crates/skyward-crypto/src/data.rs
+@@ -327,6 +327,45 @@ fn protector(user: u32) -> Result<crate::user::Protector> {
+             ),
+         },
+     };
++    protector_named(user, &id)
++}
++
++/// Every blob the phone keeps for a user's secret, the one its credential is
++/// recorded as opening first. A phone may keep one secret behind more than one
++/// blob, bound to the weaver in one and to the credential service in the
++/// other: the one it records is not always the one that comes apart here, so
++/// each is tried in turn.
++fn all_protectors(user: u32) -> Result<Vec<crate::user::Protector>> {
++    let dir = blobs(user);
++    let mut ids = Vec::new();
++    for entry in std::fs::read_dir(&dir).with_context(|| format!("read {}", dir.display()))? {
++        let path = entry.with_context(|| format!("read {}", dir.display()))?.path();
++        if path.extension().is_some_and(|e| e == "spblob")
++            && let Some(id) = path.file_stem().and_then(|s| s.to_str())
++        {
++            ids.push(id.to_string());
++        }
++    }
++    ids.sort();
++    let recorded = crate::locksettings::current_protector(Path::new(crate::locksettings::DATABASE), user).ok().flatten();
++    if let Some(recorded) = &recorded {
++        ids.retain(|id| id != recorded);
++        ids.insert(0, recorded.clone());
++    }
++    let mut protectors = Vec::with_capacity(ids.len());
++    for id in ids {
++        if let Ok(protector) = protector_named(user, &id) {
++            protectors.push(protector);
++        }
++    }
++    anyhow::ensure!(!protectors.is_empty(), "{} holds no blob of user {user}'s secret", dir.display());
++    Ok(protectors)
++}
++
++/// The blob a user's secret is kept in by the protector named `id`.
++fn protector_named(user: u32, id: &str) -> Result<crate::user::Protector> {
++    let dir = blobs(user);
++    let id = id.to_string();
+     // A user who has set a screen lock has what the phone recorded about
+     // it beside the blob; a user who has set none has nothing there.
+     let recorded = dir.join(format!("{id}.pwd"));
+@@ -430,7 +469,30 @@ const TAG_BYTES: usize = 16;
+ /// owner's own secret gave. The owner's files open, their shared storage
+ /// shows at /sdcard.
+ fn open_user_files(service: &KeyMint, user: u32, credential: Option<&[u8]>, owner: Option<&Token>) -> Result<Note> {
+-    let protector = protector(user)?;
++    // Every blob the phone keeps for the user is tried, the one its credential
++    // is recorded as opening first: a phone that keeps the weaver in a secure
++    // element whose service a recovery cannot reach records that blob, while
++    // the same secret is kept behind another bound to the credential service,
++    // which a recovery does reach.
++    let mut why = Vec::new();
++    for protector in all_protectors(user)? {
++        match open_one(service, user, &protector, credential, owner) {
++            Ok(note) => return Ok(note),
++            Err(e) => why.push(format!("{}: {e:#}", protector.id)),
++        }
++    }
++    anyhow::bail!("none of user {user}'s {} blobs opened their files ({})", why.len(), why.join("; "))
++}
++
++/// Open a user's own files through one blob the phone keeps for their secret,
++/// and give the note the secure world wrote for it.
++fn open_one(
++    service: &KeyMint,
++    user: u32,
++    protector: &crate::user::Protector,
++    credential: Option<&[u8]>,
++    owner: Option<&Token>,
++) -> Result<Note> {
+     let stretched = match &protector.lock {
+         Some(lock) => {
+             let typed = match made_up_credential(service, user, &protector.id, owner)? {
+diff --git a/crates/skyward-programs/src/secure.rs b/crates/skyward-programs/src/secure.rs
+index 33d73a5..57eaf0e 100644
+--- a/crates/skyward-programs/src/secure.rs
++++ b/crates/skyward-programs/src/secure.rs
+@@ -270,6 +270,15 @@ fn weaver(phone: &Phone) -> Result<Vec<Step>> {
+     }
+     let mut weaver = started(phone, program, Ready::Service(WEAVER.into()), besides(phone, program, WEAVER, |_| false));
+     weaver.anew = *through == Through::ElementService;
++    // The weaver is built against the installed system's libraries, and some
++    // of them come through /mnt, where the user its init script names may not
++    // reach them, though the folders are open to every user: as that user its
++    // loader stops at libvndksupport.so, which the vendor partition's
++    // libhardware.so needs, and the service it would register is never there.
++    // As the recovery's own user it reaches the same libraries, opens the same
++    // element and registers the same service.
++    weaver.service.user = Some("root".to_string());
++    weaver.service.groups = Vec::new();
+     out.push(Step::Start(Box::new(weaver)));
+     Ok(out)
+ }
+diff --git a/crates/skyward-programs/tests/phones.rs b/crates/skyward-programs/tests/phones.rs
+index 871de65..ccd3bc2 100644
+--- a/crates/skyward-programs/tests/phones.rs
++++ b/crates/skyward-programs/tests/phones.rs
+@@ -208,7 +208,7 @@ fn nezha_s_programs_are_found_as_they_were_started_on_the_phone() {
+         Started::from(Service {
+             ready_service: Some(WEAVER.into()),
+             capabilities: strings(&["WAKE_ALARM"]),
+-            ..program("/odm/bin/hw/android.hardware.weaver-service", &ON_ODM, "system", &["system", "drmrpc"])
++            ..program("/odm/bin/hw/android.hardware.weaver-service", &ON_ODM, "root", &[])
+         }),
+         Started::from(Service { ready_service: Some(BOOT.into()), ..program("/vendor/bin/hw/android.hardware.boot-service.qti", &ON_VENDOR, "root", &["root"]) }),
+     ];
+@@ -246,7 +246,7 @@ fn nezha_s_other_builds_reach_their_weaver_s_secure_element_through_the_secure_e
+             ..program("/vendor/bin/hw/android.hardware.secure_element-service.qti", &ON_VENDOR, "system", &["nfc", "system"])
+         };
+         assert_eq!(**element, Started::from(own));
+-        let thales = Service { ready_service: Some(WEAVER.into()), ..program("/odm/bin/hw/android.hardware.weaver-service.thales", &ON_ODM, "vendor_thales_weaver", &["vendor_thales_weaver", "system", "drmrpc"]) };
++        let thales = Service { ready_service: Some(WEAVER.into()), ..program("/odm/bin/hw/android.hardware.weaver-service.thales", &ON_ODM, "root", &[]) };
+         assert_eq!(**weaver, Started { anew: true, ..Started::from(thales) }, "it holds on to the service the recovery serves");
+         assert!(found.iter().filter(|started| started.anew).count() == 1);
+     }
+diff --git a/crates/skyward/src/services.rs b/crates/skyward/src/services.rs
+index 52b8d47..f1ab79b 100644
+--- a/crates/skyward/src/services.rs
++++ b/crates/skyward/src/services.rs
+@@ -45,6 +45,19 @@ const WAITING_CALLERS: libc::c_int = 1 << 30;
+ /// from.
+ const LIBRARY_PATH: &str = "LD_LIBRARY_PATH";
+ 
++/// The installed system's folders of libraries, where a program on the
++/// vendor or the odm partition finds the few it shares with the system: the
++/// loader, and what the vendor partition's libraries are built on. A
++/// recovery carries none of them, so they are searched last of all, after
++/// whatever the program names itself.
++const SHARED_LIBRARIES: [&str; 2] = ["/mnt/system/system/lib64", "/mnt/system/system/lib64/bootstrap"];
++
++/// Whether a program on `path` is the installed system's, on its vendor or
++/// odm partition, and so may need those folders.
++fn on_vendor_or_odm(path: &str) -> bool {
++    matches!(path.split('/').nth(1), Some("vendor" | "odm"))
++}
++
+ /// Keep each program running, one thread per program: start it, and start
+ /// it again whenever it exits. They are started in the order they are
+ /// given, and one that says what it will be ready with holds up those
+@@ -401,8 +414,22 @@ fn command(s: &Service, who: &Credentials, given: &Given, handed: &[(String, Own
+             }
+         }
+     }
++    // A program the installed system's partitions carry may find a library
++    // it shares with the system in the folders Android gives it, which a
++    // recovery does not carry: the same folder is opened to it last, so that
++    // one the program names itself still comes first.
++    if on_vendor_or_odm(&s.path) {
++        for shared in SHARED_LIBRARIES {
++            if !libraries.iter().any(|l| l == shared) {
++                libraries.push(shared.to_string());
++            }
++        }
++    }
+     if !libraries.is_empty() {
+         cmd.env(LIBRARY_PATH, libraries.join(":"));
++        if on_vendor_or_odm(&s.path) {
++            let _ = skyward_sys::kmsg(&format!("{} finds its libraries in {}", s.path, libraries.join(":")));
++        }
+     }
+     for (variable, socket) in handed {
+         cmd.env(variable, socket.as_raw_fd().to_string());
+diff --git a/devices/nezha.toml b/devices/nezha.toml
+index 0802144..7d68173 100644
+--- a/devices/nezha.toml
++++ b/devices/nezha.toml
+@@ -19,7 +19,7 @@ sources = ["vendor_boot", "vendor_dlkm", "vendor", "system_dlkm"]
+ # The touchscreen: Synaptics TouchComm over SPI, behind Xiaomi's touch
+ # layer, whose input device the touches come in on. Its firmware is read
+ # from /odm/firmware.
+-load = ["synaptics_tcm2"]
++load = ["synaptics_tcm2", "stm_st54se_gpio"]
+ 
+ # The driver resets the touch controller as it connects to it, and the
+ # controller comes back sending only raw frames, which the system's touch
+@@ -28,6 +28,16 @@ load = ["synaptics_tcm2"]
+ # through Xiaomi's touch layer, the driver has the controller report
+ # positions itself, and has it do so again each time it wakes the
+ # controller.
++
++# The secure element's driver, and the channel it makes, which the secure
++# element's service opens as system: the recovery's own ueventd makes it for
++# root alone, as the phone's own makes it for system.
++[[owners]]
++user = "system"
++group = "system"
++mode = 0o660
++paths = ["/dev/st54spi_gpio", "/dev/ir_spi"]
++
+ [touch]
+ writes = [{ path = "/sys/class/touch/touch_dev/enable_touch_raw", value = "0" }]
+ 
+@@ -98,13 +108,14 @@ probe = "http://connect.rom.miui.com/generate_204"
+ [update]
+ server = "https://update.miui.com/updates/miotaV3.php"
+ 
+-# The stock build the recovery is made on: the Chinese system's OS4.0.4.0,
++# The stock build the recovery is made on: the Chinese system's OS4.0.6.0,
+ # whose full update package on the phone maker's own download server holds
+-# the recovery partition the recovery is built on top of.
++# the recovery partition the recovery is built on top of. That partition is
++# 100 MiB, and the package's own manifest gives it the SHA-256 below.
+ [stock]
+-version = "OS4.0.4.0.XPACNXM"
+-package = "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS4.0.4.0.XPACNXM/nezha-ota_full-OS4.0.4.0.XPACNXM-user-17.0-4cf5faf3ac.zip"
+-recovery = "faa425b10231a0cfe2d74ff34f344f032ee2d891ea5e9420bf4e67cd86d622a7"
++version = "OS4.0.7.0.XPACNXM"
++package = "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS4.0.7.0.XPACNXM/nezha-ota_full-OS4.0.7.0.XPACNXM-user-17.0-5d0985edfa.zip"
++recovery = "43927e2cb10fc0edc6d793e2bec8f4bc4a2e0c51b0a920b65163f4e2118bc302"
+ 
+ # qcom-hv-haptics. The waveforms the driver keeps play nothing in a
+ # recovery, though the driver loads and plays them without complaint, and
