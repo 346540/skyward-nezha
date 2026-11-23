@@ -28,10 +28,9 @@ load = ["synaptics_tcm2", "stm_st54se_gpio"]
 # through Xiaomi's touch layer, the driver has the controller report
 # positions itself, and has it do so again each time it wakes the
 # controller.
-
 # The secure element's driver, and the channel it makes, which the secure
-# element's service opens as system: the recovery's own ueventd makes it for
-# root alone, as the phone's own makes it for system.
+# element's service opens as system: the recovery's own ueventd makes it
+# for root alone, as the phone's own makes it for system.
 [[owners]]
 user = "system"
 group = "system"
@@ -108,10 +107,9 @@ probe = "http://connect.rom.miui.com/generate_204"
 [update]
 server = "https://update.miui.com/updates/miotaV3.php"
 
-# The stock build the recovery is made on: the Chinese system's OS4.0.6.0,
+# The stock build the recovery is made on: the Chinese system's OS4.0.4.0,
 # whose full update package on the phone maker's own download server holds
-# the recovery partition the recovery is built on top of. That partition is
-# 100 MiB, and the package's own manifest gives it the SHA-256 below.
+# the recovery partition the recovery is built on top of.
 [stock]
 version = "OS4.0.7.0.XPACNXM"
 package = "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS4.0.7.0.XPACNXM/nezha-ota_full-OS4.0.7.0.XPACNXM-user-17.0-5d0985edfa.zip"

@@ -1,5 +1,26 @@
 # 变更记录
 
+## v0.5.2 — 跟上上游 0.5.1
+
+基于上游 `v0.5.1`（commit `43ec6da`），把 v0.3.2 的四条改动重新落到新代码上：
+
+- `devices/nezha.toml`：`[stock]` 仍指 `OS4.0.7.0.XPACNXM` 整包与 `43927e2c…bc302`；
+  `modules.load` 加 `stm_st54se_gpio`；`[[owners]]` 交出 `/dev/st54spi_gpio`、`/dev/ir_spi`。
+- `crates/skyward-programs`：weaver 以 recovery 自己的用户启动（Thales 与 Goodix 两种都一样）。
+- `crates/skyward-crypto`：`open_user_files` 遍历全部 `spblob`，记录的那个优先。
+- `crates/skyward-bootimg`：有 `lz4` 命令就用它，没有就地按 legacy 帧压。
+- `crates/skyward`：`vendor`/`odm` 上的程序库路径末尾补安装系统的两个目录，并写入 kmsg。
+- 版本 0.5.1 → 0.5.2。
+
+镜像：
+
+```
+zip    skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.zip  sha256 ab49fc221dc6627cbb2f11d44a46f8b9109343a514df5829d2cee0a90fc3e2e9
+img    skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.img  sha256 9f97d550668ea17a41e1445bb55332e23165df98394392edad9be648c6fb2934
+```
+
+**这一版尚未上机验证**（0.5.x 上游还改了 binder 层与 weaver 的 NXP 分支），先在 `recovery_b` 或备份好原厂 recovery 的前提下试。
+
 ## v0.3.2 — 首个 17 Ultra 专用版本
 
 基于上游 `v0.3.1`（commit `c5e09f6`），针对 `nezha` / `OS4.0.7.0.XPACNXM` 的改动：

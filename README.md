@@ -4,7 +4,7 @@
 上游是 [kirklin/skyward](https://github.com/kirklin/skyward)，这个仓库只针对这一台机器：
 **HyperOS `OS4.0.7.0.XPACNXM`（Android 17）**，Thales ST54L eSE 版本。
 
-镜像由 [346540/skyward](https://github.com/346540/skyward) 的 `v0.3.2` 构建（`v0.3.1` + 本机适配），
+镜像由 [346540/skyward](https://github.com/346540/skyward) 的 `v0.5.2` 构建（`v0.5.1` + 本机适配），
 配置、解密链、四处改动都在本仓库留档。
 
 ## 机型
@@ -21,11 +21,11 @@
 
 | 项 | 值 |
 |---|---|
-| 文件 | `skyward-v0.3.2-nezha-OS4.0.7.0.XPACNXM.img` |
+| 文件 | `skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.img` |
 | 大小 | 104,857,600 B |
-| sha256 | `9d6cb2d507850893d2e9396ba80dc64ca2ac6f6d104a4c758e307f87e71b1cf7` |
-| zip | `skyward-v0.3.2-nezha-OS4.0.7.0.XPACNXM.zip`，43,968,500 B |
-| zip sha256 | `c8fc37821c26ca8030bfc0dda35d29d06b2a3ee6eb5972d27f9a4e46712e3137` |
+| sha256 | `9f97d550668ea17a41e1445bb55332e23165df98394392edad9be648c6fb2934` |
+| zip | `skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.zip`，44,561,643 B |
+| zip sha256 | `ab49fc221dc6627cbb2f11d44a46f8b9109343a514df5829d2cee0a90fc3e2e9` |
 | stock 基线 | OS4.0.7.0.XPACNXM 整包内 `recovery` 分区，sha256 `43927e2cb10fc0edc6d793e2bec8f4bc4a2e0c51b0a920b65163f4e2118bc302` |
 
 在 [Releases](../../releases) 下载。
@@ -33,8 +33,8 @@
 ## 刷入
 
 ```sh
-unzip skyward-v0.3.2-nezha-OS4.0.7.0.XPACNXM.zip
-fastboot flash recovery_a skyward-v0.3.2-nezha-OS4.0.7.0.XPACNXM.img
+unzip skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.zip
+fastboot flash recovery_a skyward-v0.5.2-nezha-OS4.0.7.0.XPACNXM.img
 fastboot reboot recovery
 ```
 
@@ -78,13 +78,13 @@ adb shell su -c "dd if=/dev/block/by-name/recovery$(adb shell getprop ro.boot.sl
 - 只在这一台 `nezha`（Thales eSE）上实测；Goodix eSE 版本没有机器验证（上游用 `ro.special_edition` 区分）。
 - 改锁屏密码/图案后，Android 会重建保护者，可能又解不开；刷回原厂 recovery 即可。
 - 系统 OTA 会覆盖 `recovery` 分区；装完系统记得在 Install 页打开 *Flash Skyward again*。
-- 目前基于上游 `v0.3.1`。上游后来在 `v0.5.x` 里用别的方式修了同类问题（`736ea54`），尚未在本仓库验证。
+- 目前基于上游 `v0.5.1`（`43ec6da`），版本号 0.5.2。`v0.3.2` 仍保留在 Releases 里，是最后一次在本机实测通过的版本。
 
 ## 自己构建
 
 ```sh
 git clone https://github.com/346540/skyward && cd skyward
-git checkout v0.3.2          # 或按本仓库的 patch 应用改动
+git checkout v0.5.2          # 或按本仓库的 patch 应用改动
 cargo build --release -p skyward-pack
 target/release/skyward-pack stock   --config devices/nezha.toml
 target/release/skyward-pack recovery --stock stock/recovery.img \
@@ -99,6 +99,6 @@ target/release/skyward-pack recovery --stock stock/recovery.img \
 ## 许可
 
 Skyward 是 GPL-3.0-or-later（见 [LICENSE](LICENSE)）。本仓库的镜像与配置同样遵循该许可，
-对应的源码改动见 [skyward-nezha-0.3.2.patch](skyward-nezha-0.3.2.patch) 与 [346540/skyward](https://github.com/346540/skyward)。
+对应的源码改动见 [skyward-nezha-0.5.2.patch](skyward-nezha-0.5.2.patch) 与 [346540/skyward](https://github.com/346540/skyward)。
 
 上游作者：[kirklin](https://github.com/kirklin/skyward)。感谢。
